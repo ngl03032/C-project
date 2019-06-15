@@ -1,26 +1,38 @@
 #include <stdio.h>
+#include <stdlib.h>
 #pragma warning(disable:4996)
+#define MAX 100
+typedef enum { TRUE = 1, FALSE = 0 } boolean;
+
+int main();
+boolean IsPrime(int number);
 
 int main() {
-	int i=1, j = 1, k = 1;
-	int num;
-	int gkq=0, wkr=0, ghf=0;
-	printf("정수를 입력하세요 : ");
-	scanf("%d", &num);
-	for (i = 1; i <= num; i++) {
-		gkq += i;
+	int number = 0;
+	int i;
+
+	for (i = 2; i <= MAX; i++) {
+		if (IsPrime(i)) { // i가 소수이면 출력
+			printf("%d ", i);
+		}
 	}
-	while (j < num) {
-		ghf += j;
-		j += 2;
+	system("pause");
+	return 0;
+}
+boolean IsPrime(int number) {
+	int remainder;
+	int quotient;
+	int i = 2;
+	int count; //약수개수
+
+	quotient = (int)number / 2;
+
+	while (i <= quotient) {//2부터 number보다 작거나 같은경우인 동시에 카운트가 0일동안 반복
+		remainder = number % i;
+		if (remainder == 0) { // 약수가 존재하면
+			return FALSE; // 소수가 아님
+		}
+		i++;
 	}
-	do {
-		if (k % 2 == 0)
-		wkr =wkr + k;
-		k++;
-	} while (wkr < k);
-	
-	printf("1~%d까지의 합 : %d\n", num, gkq);
-	printf("1~%d까지 홀수의 합 : %d\n", num, ghf);
-	printf("1~%d까지 짝수의 합 : %d\n", num, wkr);
+	return TRUE;
 }

@@ -1,22 +1,29 @@
 #include <stdio.h>
+#include <stdlib.h>
 #pragma warning(disable:4996)
 
-int main() {
-	int menu;
-	printf("1.메뉴1\n2.메뉴2\n3.메뉴3\n>>>선택 : ");
-	scanf("%d", &menu);
-	switch (menu) {
-	case 1:
-		printf("메뉴1이 선택되었습니다.");
-		break;
-	case 2:
-		printf("메뉴2가 선택되었습니다.");
-		break;
-	case 3:
-		printf("메뉴3이 선택되었습니다.");
-		break;
-	default:
-		printf("잘못된 메뉴를 선택하셨습니다.");
-	}
-}
 
+int IsLeapYear(int a) {
+	int year = 0;
+	if (a % 4 == 0) {
+		year = 1;
+	}
+	else if (a % 4 && a % 100 == 0) {
+		year = 0;
+	}
+	else if (a % 100 && a % 400 == 0) {
+		year = 1;
+	}
+	else {
+		year = 0;
+	}
+	return year;
+}
+int main() {
+	int num = 0;
+	printf("판단할 년도를 입력하세요.");
+	scanf("%d", &num);
+	printf("입력한 년도 코드는 %d입니다. (윤년: 1 , 평년: 0)", IsLeapYear(num));
+	system("pause");
+	return 0;
+}

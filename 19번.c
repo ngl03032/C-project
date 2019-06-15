@@ -1,13 +1,23 @@
 #include <stdio.h>
+#include <stdlib.h>
 #pragma warning(disable:4996)
 
-int main() {
-	int num, i=0;
-	int factorial = 1;
-	printf("정수를 입력하세요: ");
-	scanf("%d", &num);
-	for (i = 1; i <= num; i++) {
-		factorial= factorial*i;
+int Power(int x, int y) {
+	int result = 1;
+	int i = 0;
+	while (i < y) {
+		result *= x;
+		i++;
 	}
-	printf("%d!의 값은 : %d", num, factorial);
+	return result;
+}
+int main() {
+	int x=0, y=0;
+	printf("x , y 입력 : ");
+	scanf("%d %d",&x,&y);
+	int result = 0;
+	result = Power(x, y);
+	printf("%d\n", result);
+	system("pause");
+	return 0;
 }
