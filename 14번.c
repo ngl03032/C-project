@@ -1,27 +1,25 @@
 #include <stdio.h>
-#include <stdlib.h>
 #pragma warning(disable:4996)
-int Round(float a) {
-	int realnumber;
-	float temp;
-	realnumber = (int)a;
-	temp = a - realnumber;
-	if (a> 0) {
-		if (temp >= 0.5) {
-			realnumber++;
-		}
-		if (temp <= -0.5) {
-			realnumber--;
-		}
-	}
-	return realnumber;
-}
 
 int main() {
-	float num;
-	printf("실수값을 입력하세요: ");
-	scanf("%f", &num);
-	printf("반올림 결과 : %d", Round(num));
-	system("pause");
-	return 0;
+	int ten[10] = { 0 };
+	int i;
+	for (i = 0; i < 10; i++) {
+		scanf("%d", &ten[i]);
+	}
+	int plus=0, minus = 0, zero = 0;
+	for (i = 0; i < 10; i++) {
+		if (ten[i] < 0) {
+			minus++;
+		}
+		if (ten[i] > 0) {
+			plus++;
+		}
+		if(ten[i]==0) {
+			zero++;
+		}
+	}
+	printf("양수의 개수는 %d개",plus);
+	printf("음수의 개수는 %d개",minus);
+	printf("0의 개수는 %d개",zero);
 }
