@@ -2,8 +2,12 @@
 #pragma warning(disable:4996)
 
 int main() {
-	float a = 0;
-	printf("면적을 입력하세요(m2): ");
-	scanf("%f", &a);
-	printf("해당 면적은 %f평 입니다.", a / 3.3058);
+	int num, i=0;
+	int factorial = 1;
+	printf("정수를 입력하세요: ");
+	scanf("%d", &num);
+	for (i = 1; i <= num; i++) {
+		factorial= factorial*i;
+	}
+	printf("%d!의 값은 : %d", num, factorial);
 }

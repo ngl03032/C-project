@@ -2,15 +2,25 @@
 #pragma warning(disable:4996)
 
 int main() {
-	int h, m, s;
-
-	printf("시간을 초단위로 입력하세요: ");
-	scanf("%d", &s);	
-
-	h = s / 3600;	
-	m = (s % 3600) / 60;
-	s -= h * 3600;
-	s -= m * 60;
-
-	printf("입력한 시간은 %d시간 %d분 %d초입니다.", h,m,s);
+	while (1) {
+	int menu;
+	printf("0.종료\n1.메뉴1\n2.메뉴2\n3.메뉴3\n>>>선택 : ");
+	scanf("%d", &menu);
+		switch (menu) {
+		case 0:
+			break;
+		case 1:
+			printf("메뉴1이 선택되었습니다.\n");
+			break;
+		case 2:
+			printf("메뉴2가 선택되었습니다.\n");
+			break;
+		case 3:
+			printf("메뉴3이 선택되었습니다.\n");
+			break;
+		default:
+			printf("잘못된 메뉴를 선택하셨습니다.\n");
+			break;
+		}
+	}
 }

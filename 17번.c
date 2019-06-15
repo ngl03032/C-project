@@ -2,19 +2,25 @@
 #pragma warning(disable:4996)
 
 int main() {
-	int year = 0;
-	printf("년도를 입력하세요: ");
-	scanf("%d", &year);
-	if (year % 4 == 0) {
-		printf("%d년은 윤년입니다.", year);
+	int i=1, j = 1, k = 1;
+	int num;
+	int gkq=0, wkr=0, ghf=0;
+	printf("정수를 입력하세요 : ");
+	scanf("%d", &num);
+	for (i = 1; i <= num; i++) {
+		gkq += i;
 	}
-	else if (year % 4 && year % 100 == 0) {
-		printf("%d년은 평년입니다.", year);
+	while (j < num) {
+		ghf += j;
+		j += 2;
 	}
-	else if (year % 100 && year % 400 == 0) {
-		printf("%d년은 윤년입니다.", year);
-	}
-	else {
-		printf("%d년은 평년입니다.", year);
-	}
+	do {
+		if (k % 2 == 0)
+		wkr =wkr + k;
+		k++;
+	} while (wkr < k);
+	
+	printf("1~%d까지의 합 : %d\n", num, gkq);
+	printf("1~%d까지 홀수의 합 : %d\n", num, ghf);
+	printf("1~%d까지 짝수의 합 : %d\n", num, wkr);
 }
