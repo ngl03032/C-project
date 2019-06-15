@@ -1,23 +1,20 @@
 #include <stdio.h>
+#include <string.h>
 #pragma warning(disable:4996)
 
 int main() {
-	int i = 0, start = 0;
-	char str[256];
-	printf("문자열 입력: ");
-	gets(str);
-	int blank = 0;
-	while (i < strlen(str)) {
-		if (i == 0 || blank == 1) {
-			if (str[i] >= 97 && str[i] <= 122) {
-				str[i] -= 32;
-				blank = 0;
-			}
-		}
-		if (str[i] == ' ') {
-				blank = 1;
-			}
-		i++;
+	double arr[5] = {5.0,2.0,3.0,4.0,5.0};
+	double *p = arr;
+	double sum = 0, average = 0;
+	int i = 0;
+	for (i = 0; i < 5; i++) {
+		sum += p[i];
 	}
-	printf("%s\n", str);
+	printf("합계는 : %lf", sum);
+	average = sum / 10;
+	printf("평균은 : %lf", average);
+
+	
+
+	
 }
